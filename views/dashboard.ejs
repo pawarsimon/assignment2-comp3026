@@ -1,0 +1,90 @@
+<h1 class="mt-4">BOOK YOUR TICKETS</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+         BOOK HERE
+        </h1>
+        <% include ./partials/messages %>
+        <form action="/dashboard" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="name"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Enter Name"
+              value="<%= typeof name != 'undefined' ? name : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Age</label>
+            <input
+              type="text"
+              id="age"
+              name="age"
+              class="form-control"
+              placeholder="Enter Age"
+              value="<%= typeof age != 'undefined' ? age : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label><br />
+            <input
+              type="radio"
+              id="gender"
+              name="gender"
+              value="Male"
+            />Male
+            <input
+              type="radio"
+              id="gender"
+              name="gender"
+              value="Female"
+              checked
+            />Female
+          </div>
+          <div class="form-group">
+            <label for="startcity">Start City</label>
+            <input
+              type="text"
+              id="startcity"
+              name="startcity"
+              class="form-control"
+              placeholder="Start City"
+              value="<%= typeof startcity != 'undefined' ? startcity : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input
+              type="text"
+              id="destination"
+              name="destination"
+              class="form-control"
+              placeholder="Destination"
+              value="<%= typeof destination != 'undefined' ? destination : '' %>"
+            />
+          </div>
+          <div class="form-group">
+            <label for="passportnumber">Passport Number</label>
+            <input
+              type="number"
+              id="passportnumber"
+              name="passportnumber"
+              class="form-control"
+              placeholder="Passport Number"
+              value="<%= typeof passportnumber != 'undefined' ? passportnumber : '' %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Booking Confirm
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
